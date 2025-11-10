@@ -786,6 +786,8 @@ def _check_gemini_token_limit(exception: Exception, error_str: str) -> bool:
 
 # NOTE: This may be out of date or not applicable to your models. Please update this as needed.
 MODEL_TOKEN_LIMITS = {
+    "openai:gpt-5-mini": 1047576,
+    "openai:gpt-5": 1047576,
     "openai:gpt-4.1-mini": 1047576,
     "openai:gpt-4.1-nano": 1047576,
     "openai:gpt-4.1": 1047576,

@@ -37,7 +37,7 @@ class Configuration:
     search_api_config: Optional[Dict[str, Any]] = None
     process_search_results: Literal["summarize", "split_and_rerank"] | None = None
     summarization_model_provider: str = "openai"
-    summarization_model: str = "gpt-4.1"
+    summarization_model: str = "gpt-5"
     max_structured_output_retries: int = 3
     include_source_str: bool = False
     
@@ -48,7 +48,7 @@ class Configuration:
     planner_model: str = "claude-3-7-sonnet-latest"
     planner_model_kwargs: Optional[Dict[str, Any]] = None
     writer_provider: str = "openai"
-    writer_model: str = "gpt-4.1"
+    writer_model: str = "gpt-5"
     writer_model_kwargs: Optional[Dict[str, Any]] = None
 
     @classmethod
@@ -74,13 +74,13 @@ class MultiAgentConfiguration:
     search_api_config: Optional[Dict[str, Any]] = None
     process_search_results: Literal["summarize", "split_and_rerank"] | None = None
     summarization_model_provider: str = "openai"
-    summarization_model: str = "gpt-4.1"
+    summarization_model: str = "gpt-5"
     include_source_str: bool = False
     
     # Multi-agent specific configuration
     number_of_queries: int = 2 # Number of search queries to generate per section
-    supervisor_model: str = "anthropic:claude-sonnet-4-20250514"
-    researcher_model: str = "anthropic:claude-sonnet-4-20250514"
+    supervisor_model: str = "openai:gpt-5"
+    researcher_model: str = "openai:gpt-5"
     ask_for_clarification: bool = False # Whether to ask for clarification from the user
     # MCP server configuration
     mcp_server_config: Optional[Dict[str, Any]] = None
